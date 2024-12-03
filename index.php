@@ -9,7 +9,7 @@
             <button onclick="SendHwaa()">HWAA</button>
         </div>
         <div>
-            <button onclick="initMap()">INnig</button>
+            <button onclick="initMap()">NiggersBan</button>
         </div>
         <div id="map" style="width: 600px; height: 400px"></div>
     </body>
