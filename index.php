@@ -2,14 +2,15 @@
 <html lang="ru">
     <head>
         <meta charset='utf-8'>
+        <link rel="stylesheet" href="./style.css">
         <title>Стоматология Дельфин, г. Уфа</title>
     </head>
     <body>
-        <div>
+        <div class="test">
             <button onclick="SendHwaa()">HWAA</button>
         </div>
-        <div>
-            <button onclick="initMap()">NiggersBan</button>
+        <div class="test2">
+            NiggersBan
         </div>
         <div id="map" style="width: 600px; height: 400px"></div>
     </body>
