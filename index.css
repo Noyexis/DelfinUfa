@@ -1,3 +1,5 @@
+/*Main font*/
+
 @font-face
 {
     font-family: 'Corbel';
@@ -7,6 +9,9 @@
 {
     font-family: 'Corbel';
 }
+
+/*General styles*/
+
 body
 {
     margin: 0px;
@@ -22,7 +27,11 @@ body
 }
 .textLarge
 {
-    font-size: 32px;
+    font-size: 28px;
+}
+.textMedium
+{
+    font-size: 24px;
 }
 .colorGray
 {
@@ -37,31 +46,19 @@ body
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 30px;
 }
-.title
-{
-    padding: 10px;
-    background-color: rgb(230, 230, 250);
-    border-bottom: 3px solid rgb(120, 120, 120);
-    border-radius: 0px 0px 10px 10px;
-}
-.button
-{
-    padding: 10px;
-    background-color: rgb(230, 230, 250);
-    border-radius: 0px 0px 20px 20px;
-    min-width: 250px;
-}
+
+/*Class elements*/
+
 .header
 {
     position: sticky;
     top: 0;
 }
-.header:hover > .buttonListForm:not(.fadeInAnimation)
+.title
 {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 10px;
+    border-bottom: 2px solid transparent;
 }
 .buttonListForm
 {
@@ -69,30 +66,27 @@ body
     position: absolute;
     left: 0;
     right: 0;
-    z-index: -1;
     opacity: 0;
-    transform: translateY(calc(-100% - 3px));
-    transition: 0.5s;
+    transform: translateY(calc(-100% - 2px));
+    gap: 30px;
 }
-.fadeOutAnimation
+.button
 {
+    min-width: 220px;
+    border-radius: 0px 0px 15px 15px;
+}
+.buttonText
+{
+    padding: 10px;
+}
+.underline
+{
+    margin: auto;
     opacity: 0;
-    transform: translateY(-100%);
-}
-.fadeInAnimation
-{
-    opacity: 1;
-    transform: translateY(-100%);
-}
-.button:hover
-{
-    cursor: pointer;
-    background-color: rgb(220, 220, 250);
-    color: rgb(255, 255, 255);
-}
-.title
-{
-    transition: 0.5s;
+    background-color: rgb(180, 180, 180);
+    width: 50%;
+    height: 2px;
+    transform: scaleX(0.5);
 }
 .content
 {
@@ -101,4 +95,78 @@ body
 .footer
 {
     height: 700px;
+}
+
+/*Transitions*/
+
+.title
+{
+    transition: 0.2s background-color;
+}
+.title:not(.titleScrollAnimation)
+{
+    transition: 0.5s 0.25s background-color, 0.25s border-color;
+}
+.buttonListForm
+{
+    transition: 0.25s opacity, 0.5s transform;
+}
+.button
+{
+    transition: 0.5s background-color;
+}
+.underline
+{
+    transition: 0.25s transform;
+}
+
+/*Relations and animations*/
+
+.header:hover > .buttonListForm
+{
+    opacity: 1;
+}
+.header:hover > .title:not(.titleScrollAnimation)
+{
+    opacity: 0;
+}
+.button:hover
+{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.button:hover > .underline
+{
+    transform: scaleX(1);
+}
+.buttonListForm.buttonListScrollAnimation > .button:hover
+{
+    color: rgb(40, 40, 40);
+}
+.buttonListForm.buttonListScrollAnimation > .button > .underline
+{
+    transition: 0s transform;
+    transform: scaleX(0);
+}
+.buttonListForm:not(.buttonListScrollAnimation):hover > .button > .underline
+{
+    opacity: 1;
+}
+
+/*Triggers*/
+
+.titleScrollAnimation
+{
+    background-color: rgb(230, 230, 250);
+    border-color: rgb(180, 180, 180);
+}
+.buttonListScrollAnimation
+{
+    z-index: -1;
+    opacity: 1;
+    transform: translateY(0);
+}
+.buttonScrollAnimation
+{
+    background-color: rgb(230, 230, 250);
 }

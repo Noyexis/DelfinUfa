@@ -6,23 +6,36 @@
         <title>Стоматология Дельфин, г. Уфа</title>
     </head>
     <body>
+        
         <div class="main">
-            <div class="header disableSelect textCenter textLarge colorGray">
-                <div class="title">
+            <div class="header disableSelect textCenter colorGray">
+                <div class="title textLarge">
                     Стоматология Дельфин
                 </div>
-                <div class="buttonListForm flexBox flexCenter">
+                <div class="buttonListForm textMedium flexBox flexCenter">
                     <div class="button mainPageButton">
-                        Главная
+                        <div class="buttonText">
+                            Главная
+                        </div>
+                        <div class="underline">&nbsp;</div>
                     </div>
                     <div class="button servicesPageButton">
-                        Услуги
+                        <div class="buttonText">
+                            Услуги
+                        </div>
+                        <div class="underline">&nbsp;</div>
                     </div>
                     <div class="button patientsPageButton">
-                        Пациенты
+                        <div class="buttonText">
+                            Пациенты
+                        </div>
+                        <div class="underline">&nbsp;</div>
                     </div>
                     <div class="button doctorsPageButton">
-                        Врачи
+                        <div class="buttonText">
+                            Врачи
+                        </div>
+                        <div class="underline">&nbsp;</div>
                     </div>
                 </div>
             </div>
