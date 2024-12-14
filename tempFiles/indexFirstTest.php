@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset='utf-8'>
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./styles/index.css">
         <title>Стоматология Дельфин, г. Уфа</title>
     </head>
     <body>
@@ -11,7 +11,7 @@
                 <div class="title">
                     Стоматология Дельфин
                 </div>
-                <div class="buttonListForm flexBox flexCenter">
+                <div class="buttons flexBox flexCenter">
                     <div class="button mainPageButton">
                         Главная
                     </div>
@@ -26,14 +26,11 @@
                     </div>
                 </div>
             </div>
-            <div class="content">
+            <div>
                 Главная
-            </div>
-            <div class="footer">
-                Футер
             </div>
         </div>
     </body>
-    <script src="./jquery-3.6.0.js"></script>
-    <script src="./index.js"></script>
+    <script src="./scripts/jquery-3.6.0.js"></script>
+    <script src="./scripts/index.js"></script>
 </html>

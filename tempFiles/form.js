@@ -83,10 +83,19 @@ function sendRequest()
     var name = $(".nameInput").val();
     var phone = $(".phoneInput").val();
     var description = $(".descriptionInput").val();
+    console.log(/^\d{1}-\d{3}-\d{3}-\d{2}-\d{2}$/.test(phone));
+    $.get("./data.php?command=getTestData", function(data)
+    {
+        var array = jQuery.parseJSON(data);
+        console.log(array);
+    });
+    /*
     var url = "https://api.telegram.org/bot7825856724:AAE9HhhuxDGA34oBYCQ8kWg-B9VbSBbal2E/sendMessage?chat_id=-4603636417&text=";
+    var url = "https://api.telegram.org/bot7825856724:AAE9HhhuxDGA34oBYCQ8kWg-B9VbSBbal2E/sendMessage?chat_id=-4764941748&text="; NEW
     url += name + "%0A" + phone + "%0A" + description;
     url += "&parse_mode=html";
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url, true);
     oReq.send();
+    */
 }

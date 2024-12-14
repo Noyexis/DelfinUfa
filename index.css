@@ -1,0 +1,104 @@
+@font-face
+{
+    font-family: 'Corbel';
+    src: URL('./corbel.ttf') format('truetype');
+}
+*
+{
+    font-family: 'Corbel';
+}
+body
+{
+    margin: 0px;
+    background: rgb(210, 210, 250);
+}
+.disableSelect
+{
+    user-select: none;
+}
+.textCenter
+{
+    text-align: center;
+}
+.textLarge
+{
+    font-size: 32px;
+}
+.colorGray
+{
+    color: rgb(140, 140, 140);
+}
+.flexBox
+{
+    display: flex;
+}
+.flexCenter
+{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+.title
+{
+    padding: 10px;
+    background-color: rgb(230, 230, 250);
+    border-bottom: 3px solid rgb(120, 120, 120);
+    border-radius: 0px 0px 10px 10px;
+}
+.button
+{
+    padding: 10px;
+    background-color: rgb(230, 230, 250);
+    border-radius: 0px 0px 20px 20px;
+    min-width: 250px;
+}
+.header
+{
+    position: sticky;
+    top: 0;
+}
+.header:hover > .buttonListForm:not(.fadeInAnimation)
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+.buttonListForm
+{
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(calc(-100% - 3px));
+    transition: 0.5s;
+}
+.fadeOutAnimation
+{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.fadeInAnimation
+{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+.button:hover
+{
+    cursor: pointer;
+    background-color: rgb(220, 220, 250);
+    color: rgb(255, 255, 255);
+}
+.title
+{
+    transition: 0.5s;
+}
+.content
+{
+    height: 700px;
+}
+.footer
+{
+    height: 700px;
+}
