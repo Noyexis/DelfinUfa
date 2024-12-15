@@ -27,15 +27,13 @@ $(document).ready(function()
     {
         if ($(this).scrollTop() > 0)
         {
-            $(".title").addClass("titleScrollAnimation");
-            $(".buttonListForm").addClass("buttonListScrollAnimation");
-            $(".button").addClass("buttonScrollAnimation");
+            $(".title").addClass("scrollAnimation");
+            $(".buttonListForm").addClass("scrollAnimation");
         }
         else
         {
-            $(".title").removeClass("titleScrollAnimation");
-            $(".buttonListForm").removeClass("buttonListScrollAnimation");
-            $(".button").removeClass("buttonScrollAnimation");
+            $(".title").removeClass("scrollAnimation");
+            $(".buttonListForm").removeClass("scrollAnimation");
         }
     });
 });
