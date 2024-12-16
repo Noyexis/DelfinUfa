@@ -2,12 +2,38 @@
 
 @font-face
 {
+    font-family: 'CorbelL';
+    src: URL('./corbelL.ttf') format('truetype');
+}
+@font-face
+{
     font-family: 'Corbel';
     src: URL('./corbel.ttf') format('truetype');
 }
-*
+.corbelL
+{
+    font-family: 'CorbelL';
+}
+.corbel
 {
     font-family: 'Corbel';
+}
+
+/*WebKit*/
+
+::-webkit-scrollbar
+{
+    width: 10px;
+}
+::-webkit-scrollbar-track
+{
+    background-color: rgb(160, 170, 190);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgb(120, 130, 150);
+    border-radius: 2px;
 }
 
 /*General styles*/
@@ -25,17 +51,33 @@ body
 {
     text-align: center;
 }
+.textRight
+{
+    text-align: right;
+}
 .textLarge
 {
     font-size: 23px;
+}
+.textHuge
+{
+    font-size: 46px;
 }
 .textMedium
 {
     font-size: 19px;
 }
+.textSmall
+{
+    font-size: 14px;
+}
 .colorGray
 {
     color: rgb(140, 140, 140);
+}
+.colorWhite
+{
+    color: rgb(255, 255, 255);
 }
 .flexBox
 {
@@ -54,6 +96,7 @@ body
 {
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 .title
 {
@@ -88,14 +131,6 @@ body
     width: 50%;
     height: 2px;
     transform: scaleX(0.5);
-}
-.content
-{
-    height: 700px;
-}
-.footer
-{
-    height: 700px;
 }
 
 /*Transitions and relations*/
@@ -176,3 +211,120 @@ body
 Triggers:
     scrollAnimation
 */
+
+/*Content*/
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    background-color: rgb(20, 40, 60);
+    color: white;
+    transition: 0.5s transform;
+}
+.footer:not(.scrollAnimation)
+{
+    transform: translateY(100%);
+}
+.footer.scrollAnimation
+{
+    transform: translateY(80%);
+}
+.footer:hover
+{
+    transform: translateY(0);
+}
+.content
+{
+    margin: 40px;
+}
+.contentServices, .contentPatients, .contentDoctors
+{
+    display: none;
+}
+.contentMain
+{
+    height: 1200px;
+}
+.contentMain, .contentServices, .contentPatients, .contentDoctors
+{
+    transition: 0.5s transform 0.5s opacity;
+}
+
+/*main*/
+.gridBox
+{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.mainImage
+{
+    top: 100px;
+    left: -150px;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transform: rotate(-15deg);
+    position: fixed;
+    z-index: -1;
+}
+.mainInfoBox
+{
+    margin-top: 100px;
+    margin-left: auto; 
+    margin-right: 0;
+    width: fit-content;
+}
+.mainTextBox
+{
+    width: 500px;
+}
+.registerButton
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: fit-content;
+    text-align: center;
+}
+
+/*Services*/
+.sercivesTable
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    max-height: 600px;
+    overflow: auto;
+    border-spacing: 2px 2px;
+}
+.sercivesTable > tbody
+{
+    margin-top: 0px;
+}
+.sercivesTable > tbody > tr
+{
+    background-color: rgb(120, 130, 150);
+}
+.sercivesTable > tbody > tr:nth-child(even)
+{
+    background-color: rgb(160, 170, 190);
+}
+.sercivesTable > tbody > tr > td
+{
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+}

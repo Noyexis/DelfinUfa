@@ -6,8 +6,7 @@
         <title>Стоматология Дельфин, г. Уфа</title>
     </head>
     <body>
-        
-        <div class="main">
+        <div class="main corbelL">
             <div class="header disableSelect textCenter colorGray">
                 <div class="title textLarge">
                     Стоматология Дельфин
@@ -39,11 +38,43 @@
                     </div>
                 </div>
             </div>
-            <div class="content">
-                Главная
+            <div class="content disableSelect">
+                <div class="contentMain">
+                    <img class="mainImage" src="./dlph.png" alt="DelfinUfa">
+                    <div class="mainInfoBox textHuge">
+                        <div class="mainTextBox corbel textCenter colorWhite">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget turpis ut risus pretium dapibus. Nulla fringilla dictum nisl id pellentesque.
+                        </div>
+                        <div class="registerButtonContainer">
+                            <div class="registerButton textCenter">
+                                Записаться
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentServices">
+                    <table class="sercivesTable">
+                        <tr>
+                            <td>
+                                Наименование услуги
+                            </td>
+                            <td>
+                                Стоимость, руб.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="contentPatients">
+                    Пациенты
+                </div>
+                <div class="contentDoctors">
+                    Врачи
+                </div>
             </div>
-            <div class="footer">
-                Футер
+            <div class="footer textSmall colorWhite">
+                <div>
+                    Cтоматологическая клиника © "Дельфин", 2024
+                </div>
             </div>
         </div>
     </body>
