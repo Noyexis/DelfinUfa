@@ -290,9 +290,8 @@ Triggers:
     padding-left: 60px;
     padding-right: 60px;
     background-color: rgb(255, 255, 255);
-    color: black;
     border-radius: 15px;
-    border: 2px solid black;
+    border: 2px solid rgb(140, 140, 140);
     width: fit-content;
     text-align: center;
 }

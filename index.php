@@ -46,7 +46,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget turpis ut risus pretium dapibus. Nulla fringilla dictum nisl id pellentesque.
                         </div>
                         <div class="registerButtonContainer">
-                            <div class="registerButton textCenter">
+                            <div class="registerButton textCenter colorGray">
                                 Записаться
                             </div>
                         </div>
