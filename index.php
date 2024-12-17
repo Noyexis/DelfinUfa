@@ -65,7 +65,31 @@
                     </table>
                 </div>
                 <div class="contentPatients">
-                    Пациенты
+                <div class="gallery"> 
+        <div class="container">
+  <div class="card">
+    <img src="dirdochka.jpg">
+    <div class="card__head">Лечение каналов</div>
+  </div>
+  <div class="card">
+    <img src="asmr box.jpg">
+    <div class="card__head">Восстановление зубов</div>
+  </div>
+  <div class="card">
+    <img src="colossal woman.jpg">
+    <div class="card__head">Пациентка, скрывающая боль</div>
+  </div>
+  <div class="card">
+    <img src="schastlivi.jpg">
+    <div class="card__head">10 лет ес ес</div>
+  </div>
+  <div class="card">
+    <img src="zoobick.jpg">
+    <div class="card__head">Восстановление зуба</div>
+  </div>
+</div>
+</div>
+        </div>
                 </div>
                 <div class="contentDoctors">
                     Врачи
