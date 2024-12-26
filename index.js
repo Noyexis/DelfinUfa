@@ -1,4 +1,6 @@
-var services = [];
+var scrollPosition = 0;
+var registrationButtonVectorX = 0;
+var registrationButtonVectorY = 0;
 $(document).ready(function()
 {
     //Обновление css файлов
@@ -8,108 +10,107 @@ $(document).ready(function()
         link.href = link.href.replace(/\?.*|$/, "?" + Date.now());
     }
     */
-    $(".mainPageButton").on("click", function()
-    {
-        $(".contentMain").css("display", "block");
-        $(".contentServices").css("display", "none");
-        $(".contentPatients").css("display", "none");
-        $(".contentDoctors").css("display", "none");
-        $(document).scrollTop(0);
-    });
-    $(".servicesPageButton").on("click", function()
-    {
-        $(".contentMain").css("display", "none");
-        $(".contentServices").css("display", "block");
-        $(".contentPatients").css("display", "none");
-        $(".contentDoctors").css("display", "none");
-        $(document).scrollTop(0);
-    });
-    $(".patientsPageButton").on("click", function()
-    {
-        $(".contentMain").css("display", "none");
-        $(".contentServices").css("display", "none");
-        $(".contentPatients").css("display", "block");
-        $(".contentDoctors").css("display", "none");
-        $(document).scrollTop(0);
-    });
-    $(".doctorsPageButton").on("click", function()
-    {
-        $(".contentMain").css("display", "none");
-        $(".contentServices").css("display", "none");
-        $(".contentPatients").css("display", "none");
-        $(".contentDoctors").css("display", "block");
-        $(document).scrollTop(0);
-    });
+    //Скроллинг тела
     $(document).on("scroll", function()
     {
-        if ($(this).scrollTop() > 0)
+        scrollPosition = $(document).scrollTop() / ($(document).height() - $(window).height());
+        if (scrollPosition == 0)
         {
-            $(".title").addClass("scrollAnimation");
-            $(".buttonListForm").addClass("scrollAnimation");
-            $(".footer").addClass("scrollAnimation");
-
-            $(".mainImage").css("transform", `translateY(${-$(this).scrollTop() / ($(this).height() - $(window).height()) * 130}px) rotate(-15deg)`);
+            $("#main").removeClass("scroll");
         }
         else
         {
-            $(".title").removeClass("scrollAnimation");
-            $(".buttonListForm").removeClass("scrollAnimation");
-            $(".footer").removeClass("scrollAnimation");
-
-            $(".mainImage").css("transform", "rotate(-15deg)");
+            $("#main").addClass("scroll");
         }
+        document.documentElement.style.setProperty('--scrollPositionH', `${scrollPosition}vh`);
+        document.documentElement.style.setProperty('--scrollPositionP', `${scrollPosition}%`);
     });
-    loadServices();
-});
-function loadServices()
-{
-    services.push(["Первичный осмотр и консультация", "500"]);
-    services.push(["Медицинское обследование для оформления справок", "500"]);
-    services.push(["Диагностический цифровой прицельный снимок RVG", "400"]);
-    services.push(["Анестезия аппликационная", "600"]);
-    services.push(["Анестезия  инфильтрационная отечественного производства", "600"]);
-    services.push(["Анестезия карпульная проводниковая  (импортное)", "600"]);
-    services.push(["Снятие зубных отложений механическим способом", "350"]);
-    services.push(["Снятие над- и поддесневого камня с помощью аппарата Пьезон-мастер", "350"]);
-    services.push(["Снятие зубного налета (Air-flow)1 зуб", "350"]);
-    services.push(["Профессиональная чистка зубов пастой «Детартрин»", "350"]);
-    services.push(["Восстановление одного отсутствующего зуба с использованием «Ribond-системы»", "8000"]);
-    services.push(["Реставрация разрушенного зуба  анкерным штифтом", "8000"]);
-    services.push(["Реставрация разрушенного зуба  стекловолоконным штифтом", "8000"]);
-    services.push(["Установка Скайза(без стоимости камня)", "7000"]);
-    services.push(["Отбеливание зубов (химическое)", "8000"]);
-    services.push(["Глубокое фторирование 1зуба", "400"]);
-    services.push(["Наложение девитализирующей пасты", "400"]);
-    services.push(["Механическая обработка канала", "650"]);
-    services.push(["Закрытие перфорации «Pro-root»", "1000"]);
-    services.push(["Полировка, коррекция и пришлифовывание пломбы", "400"]);
-    services.push(["Наложение временной пломбы", "400"]);
-    services.push(["I класс по блеку", "1900"]);
-    //
-    services.push(["Первичный осмотр и консультация", "500"]);
-    services.push(["Медицинское обследование для оформления справок", "500"]);
-    services.push(["Диагностический цифровой прицельный снимок RVG", "400"]);
-    services.push(["Анестезия аппликационная", "600"]);
-    services.push(["Анестезия  инфильтрационная отечественного производства", "600"]);
-    services.push(["Анестезия карпульная проводниковая  (импортное)", "600"]);
-    services.push(["Снятие зубных отложений механическим способом", "350"]);
-    services.push(["Снятие над- и поддесневого камня с помощью аппарата Пьезон-мастер", "350"]);
-    services.push(["Снятие зубного налета (Air-flow)1 зуб", "350"]);
-    services.push(["Профессиональная чистка зубов пастой «Детартрин»", "350"]);
-    services.push(["Восстановление одного отсутствующего зуба с использованием «Ribond-системы»", "8000"]);
-    services.push(["Реставрация разрушенного зуба  анкерным штифтом", "8000"]);
-    services.push(["Реставрация разрушенного зуба  стекловолоконным штифтом", "8000"]);
-    services.push(["Установка Скайза(без стоимости камня)", "7000"]);
-    services.push(["Отбеливание зубов (химическое)", "8000"]);
-    services.push(["Глубокое фторирование 1зуба", "400"]);
-    services.push(["Наложение девитализирующей пасты", "400"]);
-    services.push(["Механическая обработка канала", "650"]);
-    services.push(["Закрытие перфорации «Pro-root»", "1000"]);
-    services.push(["Полировка, коррекция и пришлифовывание пломбы", "400"]);
-    services.push(["Наложение временной пломбы", "400"]);
-    services.push(["I класс по блеку", "1900"]);
-    for (let i = 0; i < services.length; i++)
+    $(window).resize(function()
     {
-        $(".sercivesTable tr:last").after("<tr><td>" + services[i][0] + "</td><td>" + services[i][1] + "</td></tr>");
-    }
+        $(document).trigger("scroll");
+    });
+    //trigger mousemove?
+    $(document).mousemove(function(e) {
+        var mousePositionX = e.clientX;
+        var mousePositionY = e.clientY;
+        var elementHalfWidth = $(".openRegistrationButtonContainer").width() / 2;
+        var elementHalfHeight = $(".openRegistrationButtonContainer").height() / 2;
+        var elementCenterX = $(".openRegistrationButtonContainer").position().left + elementHalfWidth;
+        var elementCenterY = $(".openRegistrationButtonContainer").position().top + elementHalfHeight;
+        registrationButtonVectorX = (mousePositionX - elementCenterX) / elementHalfWidth / 7;
+        registrationButtonVectorY = (mousePositionY - elementCenterY) / elementHalfHeight / 7;
+        if (registrationButtonVectorX > 1)
+        {
+            registrationButtonVectorX = 1;
+        }
+        if (registrationButtonVectorX < -1)
+        {
+            registrationButtonVectorX = -1;
+        }
+        if (registrationButtonVectorY > 1)
+        {
+            registrationButtonVectorY = 1;
+        }
+        if (registrationButtonVectorY < -1)
+        {
+            registrationButtonVectorY = -1;
+        }
+        if (mousePositionX - elementCenterX > -elementHalfWidth && mousePositionX - elementCenterX < elementHalfWidth && mousePositionY - elementCenterY > -elementHalfHeight && mousePositionY - elementCenterY < elementHalfHeight)
+        {
+            registrationButtonVectorX = 0;
+            registrationButtonVectorY = 0;
+        }
+        document.documentElement.style.setProperty('--registrationButtonVectorXP', `${registrationButtonVectorX}%`);
+        document.documentElement.style.setProperty('--registrationButtonVectorXW', `${registrationButtonVectorX}vw`);
+        document.documentElement.style.setProperty('--registrationButtonVectorYP', `${registrationButtonVectorY}%`);
+        document.documentElement.style.setProperty('--registrationButtonVectorYH', `${registrationButtonVectorY}vh`);
+    });
+    //При наведении
+    $(".header, .footer, .titleButton, .openRegistrationButtonContainer").hover(function()
+    {
+        $(this).addClass("hover");
+    }, function()
+    {
+        $(this).removeClass("hover");
+    });
+    $(".openRegistrationButtonContainer").click(function()
+    {
+       $(".registration").addClass("click");
+    });
+    $(".registrationBackground").click(function()
+    {
+        $(".registration").removeClass("click");
+    });
+    $(".registerButton").click(function()
+    {
+        sendRequest();
+    });
+    //start
+    $(document).trigger("scroll");
+    setInterval(noise, 115);
+});
+function noise() {
+    $('.noise').css("backgroundPosition", `${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%`);
+}
+function sendRequest()
+{
+    var name = $(".nameInput").val();
+    var phone = $(".phoneInput").val();
+    var reason = $(".reasonInput").val();
+    //console.log(/^\d{1}-\d{3}-\d{3}-\d{2}-\d{2}$/.test(phone));
+    //var url = "https://api.telegram.org/bot7825856724:AAE9HhhuxDGA34oBYCQ8kWg-B9VbSBbal2E/sendMessage?chat_id=-4603636417&text="; OLD
+    var url = "https://api.telegram.org/bot7825856724:AAE9HhhuxDGA34oBYCQ8kWg-B9VbSBbal2E/sendMessage?chat_id=-4764941748&text=";
+    url += name + "%0A" + phone + "%0A" + reason;
+    url += "&parse_mode=html";
+    var oReq = new XMLHttpRequest();
+    oReq.open("GET", url, true);
+    oReq.send();
+}
+function test()
+{
+    $.get("./data.php?command=getTestData", function(data)
+    {
+        var array = jQuery.parseJSON(data);
+        console.log(array);
+    });
 }
